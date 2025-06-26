@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Ajeng Puspitaloka</title>
     <style>
         /* Font dari Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -92,6 +92,11 @@
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 1rem;
+        }
+        
+        .contact-info-header {
+            margin-top: 1rem;
+            font-size: 0.9rem;
         }
         
         .social-icons {
@@ -257,79 +262,44 @@
             --order: 2;
         }
         
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background: linear-gradient(to bottom, #6e8efb, #a777e3);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1.5px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 3px solid #a777e3;
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -13px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -13px;
-        }
-        
-        .timeline-content {
-            padding: 1.5rem;
+        .education-item {
             background-color: white;
             border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
         
-        .timeline-content:hover {
+        .education-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         
-        .timeline-year {
-            color: #6e8efb;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
         }
         
-        .timeline-degree {
+        .education-institution {
             font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .education-duration {
+            color: #6c757d;
+        }
+        
+        .education-degree {
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #6e8efb;
+        }
+        
+        .education-gpa {
+            font-style: italic;
             margin-bottom: 0.5rem;
         }
         
@@ -376,6 +346,15 @@
         
         .exp-desc {
             color: #555;
+            margin-bottom: 0.5rem;
+        }
+        
+        .exp-desc ul {
+            padding-left: 1.5rem;
+        }
+        
+        .exp-desc li {
+            margin-bottom: 0.3rem;
         }
         
         /* Proyek */
@@ -406,6 +385,11 @@
             width: 100%;
             height: 180px;
             object-fit: cover;
+            background-color: #f1f3f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
         }
         
         .project-content {
@@ -415,6 +399,13 @@
         .project-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+        
+        .project-subtitle {
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         
         .project-tech {
@@ -445,11 +436,62 @@
             display: flex;
             align-items: center;
             gap: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Sertifikasi */
+        #certifications {
+            --order: 5;
+        }
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .cert-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .cert-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .cert-date {
+            color: #6c757d;
+        }
+        
+        .cert-issuer {
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #6e8efb;
+        }
+        
+        .cert-desc {
+            color: #555;
         }
         
         /* Kontak */
         #contact {
-            --order: 5;
+            --order: 6;
             background-color: white;
             padding: 2rem;
             border-radius: 8px;
@@ -573,31 +615,12 @@
                 text-align: center;
             }
             
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: 15px;
-            }
-            
-            .timeline-item:nth-child(odd)::after {
-                right: auto;
-                left: 15px;
-            }
-            
             .social-icons {
                 justify-content: center;
+            }
+            
+            #about {
+                flex-direction: column;
             }
         }
     </style>
@@ -610,12 +633,15 @@
                 <div class="profile-text">
                     <h1 class="name">Ajeng Puspitaloka</h1>
                     <div class="title">Mahasiswa Teknik Informatika</div>
-                    <p>Pengembang Web | UI/UX Designer | Programmer</p>
+                    <p>Pengembang Web & Mobile | UI/UX Designer | Data Enthusiast</p>
+                    <div class="contact-info-header">
+                        Kab. Bekasi | ajengpuspitaloka1@gmail.com | +6282114293138
+                    </div>
                     <div class="social-icons">
-                        <a href="#"><i>📱</i></a>
-                        <a href="#"><i>📧</i></a>
-                        <a href="#"><i>💼</i></a>
-                        <a href="#"><i>📚</i></a>
+                        <a href="https://github.com/ajengpuspitaloka" target="_blank"><i>💻</i></a>
+                        <a href="mailto:ajengpuspitaloka1@gmail.com"><i>📧</i></a>
+                        <a href="https://linkedin.com" target="_blank"><i>🔗</i></a>
+                        <a href="tel:+6282114293138"><i>📱</i></a>
                     </div>
                 </div>
             </div>
@@ -629,6 +655,7 @@
                 <li><a href="#education">Pendidikan</a></li>
                 <li><a href="#experience">Pengalaman</a></li>
                 <li><a href="#projects">Proyek</a></li>
+                <li><a href="#certifications">Sertifikasi</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </div>
@@ -638,23 +665,14 @@
         <section id="about">
             <div class="about-text">
                 <h2 class="section-title">Tentang Saya</h2>
-                <p>Saya adalah mahasiswa Teknik Informatika yang bersemangat tentang pengembangan web dan UI/UX design. Saya memiliki keahlian dalam berbagai bahasa pemrograman dan teknologi web modern. Selain coding, saya juga senang belajar hal-hal baru dan berpartisipasi dalam hackathon dan kompetisi pemrograman.</p>
-                <p>Dengan pengalaman dalam beberapa proyek dan magang, saya telah mengembangkan kemampuan untuk bekerja dalam tim dan menyelesaikan masalah dengan kreatif. Saya bertujuan untuk terus mengembangkan keterampilan saya dan berkontribusi pada industri teknologi.</p>
+                <p>Mahasiswa Teknik Informatika di Institut Teknologi PLN dengan passion di bidang pengembangan web dan mobile. Memiliki keahlian dalam desain UI/UX (Figma), frontend (HTML, CSS, JavaScript), backend (PHP), dan penanganan data dengan Python. Berpengalaman dalam membangun antarmuka yang responsif. Adaptif, komunikatif, dan berkomitmen pada inovasi digital.</p>
+                <p>Saya memiliki kemampuan untuk bekerja dalam tim dan menyelesaikan masalah dengan solusi kreatif. Selalu bersemangat untuk mempelajari teknologi baru dan menerapkannya dalam proyek-proyek nyata.</p>
             </div>
             <div class="about-skills">
                 <h3 class="section-title">Keahlian</h3>
                 <div class="skill">
                     <div class="skill-name">
-                        <span>HTML & CSS</span>
-                        <span>80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="--width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">
-                        <span>JavaScript</span>
+                        <span>UI/UX Design (Figma)</span>
                         <span>85%</span>
                     </div>
                     <div class="skill-bar">
@@ -663,7 +681,7 @@
                 </div>
                 <div class="skill">
                     <div class="skill-name">
-                        <span>React</span>
+                        <span>Frontend (HTML, CSS, JS)</span>
                         <span>80%</span>
                     </div>
                     <div class="skill-bar">
@@ -672,11 +690,29 @@
                 </div>
                 <div class="skill">
                     <div class="skill-name">
-                        <span>Python</span>
+                        <span>Backend (PHP, Laravel)</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Data Handling (Python)</span>
                         <span>70%</span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="--width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Mobile Development</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 65%"></div>
                     </div>
                 </div>
             </div>
@@ -684,22 +720,22 @@
         
         <section id="education">
             <h2 class="section-title">Pendidikan</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2022 - Sekarang</div>
-                        <div class="timeline-degree">Teknik Informatika</div>
-                        <div class="timeline-institution">Institut Teknologi PLN</div>
-                        <p>Mempelajari Algoritma, Struktur Data, Basis Data, Pengembangan Web, dan Kecerdasan Buatan. Aktif dalam komunitas pemrograman kampus.</p>
-                    </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="education-institution">INSTITUT TEKNOLOGI PLN - Jakarta</div>
+                    <div class="education-duration">Sep 2024 – Sekarang</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2019 - 2022</div>
-                        <div class="timeline-degree">SMA PUSAKA NUSANTARA 2 BEKASI</div>
-                        <p>Jurusan IPS dengan fokus pada Sejarah. Aktif mengikuti coding bootcamp untuk mengasah keterampilan.</p>
-                    </div>
+                <div class="education-degree">Sarjana Teknik Informatika</div>
+                <div class="education-gpa">IPK: 3.72/4.00</div>
+                <p>Mempelajari berbagai aspek teknik informatika termasuk pengembangan web, mobile, basis data, dan kecerdasan buatan.</p>
+            </div>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="education-institution">SMA5 PUSAKA NUSANTARA 2 - Bekasi</div>
+                    <div class="education-duration">Lulus Mei 2022</div>
                 </div>
+                <div class="education-degree">Jurusan Ilmu Pengetahuan Sosial</div>
+                <div class="education-gpa">Nilai: 89.08</div>
             </div>
         </section>
         
@@ -707,11 +743,31 @@
             <h2 class="section-title">Pengalaman</h2>
             <div class="exp-card">
                 <div class="exp-header">
-                    <div class="exp-company">PLN ICON PLUS MAMPANG</div>
-                    <div class="exp-duration">Februari 2025</div>
+                    <div class="exp-company">FPI PLN ICON Plus</div>
+                    <div class="exp-duration">Magang</div>
                 </div>
-                <div class="exp-title">IT SUPPORT</div>
-                <p class="exp-desc">Mengembangkan aplikasi web perusahaan menggunakan Framework Laravel. Berkolaborasi dengan tim desain untuk mengimplementasikan UI/UX yang responsif. Memperbaiki bug dan meningkatkan performa situs.</p>
+                <div class="exp-title">IT SUPPORT INTERN</div>
+                <div class="exp-desc">
+                    <ul>
+                        <li>Mendesain antarmuka pengguna (UI) untuk dashboard pengaduan publik PLN menggunakan Figma, termasuk wireframe dan prototipe high-fidelity.</li>
+                        <li>Berkolaborasi dengan pengembang frontend dan backend untuk memastikan implementasi desain yang konsisten, responsif, dan mudah diakses.</li>
+                        <li>Menerapkan prinsip-prinsip desain modern dan tata letak adaptif di seluruh halaman web internal, mengintegrasikan alat seperti Bootstrap, MySQL, dan Leaflet.js.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-company">DAPUR MACAN FOOD & DUA PUTRI BOUTIQUE</div>
+                    <div class="exp-duration">Full Time</div>
+                </div>
+                <div class="exp-title">STAFF</div>
+                <div class="exp-desc">
+                    <ul>
+                        <li>Mengelola pemasaran digital, katalog produk, pemrosesan pesanan, dan operasi pengiriman.</li>
+                        <li>Meningkatkan keterlibatan pelanggan melalui strategi promosi di Instagram dan WhatsApp Business.</li>
+                        <li>Mempertahankan layanan pelanggan berkualitas tinggi dan memperluas jangkauan penjualan online.</li>
+                    </ul>
+                </div>
             </div>
         </section>
         
@@ -719,43 +775,127 @@
             <h2 class="section-title">Proyek</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="projectmagang.png" alt="Proyek 1" class="project-img">
+                    <div class="project-img">Gambar Proyek</div>
                     <div class="project-content">
-                        <h3 class="project-title">IT Support Dashboard</h3>
-                        <h4 class="project-title">PLN ICON PLUS MAMPANG</h4>
-
-                        <p>Web untuk memantau tickets pelaporan serta management user dengan fitur dapat CRUD user.</p>
+                        <h3 class="project-title">Pengaduan Pelayanan PLN</h3>
+                        <div class="project-subtitle">Proyek Pemrograman Web Lanjutan</div>
+                        <p>Aplikasi web manajemen pengaduan menggunakan Laravel 12 dengan autentikasi pengguna/admin dan akses dashboard berbasis peran.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Visual Studio Code</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">DATABASE</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Bootstrap 5</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">CRUD</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://ajengpuspitaloka.github.io/PortofolioAjeng2231043/" class="project-link">GitHub (Klik untuk melihat Demo)</a>
+                            <a href="#" class="project-link">Lihat Detail</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="projectmoprog.png" alt="Proyek 2" class="project-img">
+                    <div class="project-img">Gambar Proyek</div>
                     <div class="project-content">
-                        <h3 class="project-title">MedicHub</h3>
-                        <p>MedicHub adalah aplikasi layanan kesehatan digital yang memberikan kemudahan akses ke berbagai kebutuhan medis, 
-                            seperti konsultasi dokter secara online melalui chat, dan pembelian obat dengan pengiriman langsung dari apotek resmi.</p>
+                        <h3 class="project-title">Medichub</h3>
+                        <div class="project-subtitle">Proyek Pemrograman Mobile</div>
+                        <p>Aplikasi layanan kesehatan yang mendukung SDG 3, memungkinkan konsultasi dokter online real-time dan pemesanan obat dari apotek berlisensi.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Android Studio</span>
                             <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Gradle</span>
-
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">API</span>
                         </div>
                         <div class="project-links">
-                            <a href="Project Medichub.pdf" class="project-link">Demo</a>
+                            <a href="Project Medichub.pdf" class="project-link">Lihat Demo</a>
                         </div>
                     </div>
                 </div>
-
-                 
+                <div class="project-card">
+                    <div class="project-img">Gambar Proyek</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Burning Kecli</h3>
+                        <div class="project-subtitle">Proyek Grafika Komputer dan Animasi</div>
+                        <p>Animasi 3D karakter burung kecil dengan elemen lingkungan untuk mendukung penceritaan visual.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Blender</span>
+                            <span class="tech-tag">3D Modeling</span>
+                            <span class="tech-tag">Animasi</span>
+                            <span class="tech-tag">Rigging</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Lihat Video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Gambar Proyek</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistem Penjualan Apartemen</h3>
+                        <div class="project-subtitle">Proyek Pemrograman Berorientasi Objek</div>
+                        <p>Aplikasi desktop penjualan apartemen menggunakan Java Swing di NetBeans dengan form interaktif untuk transaksi pelanggan.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Swing</span>
+                            <span class="tech-tag">NetBeans</span>
+                            <span class="tech-tag">OOP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">Lihat Kode</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="certifications">
+            <h2 class="section-title">Sertifikasi</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">Internship PLN Grup</div>
+                        <div class="cert-date">Feb 2025</div>
+                    </div>
+                    <div class="cert-issuer">PLN ICON+ Jakarta</div>
+                    <div class="cert-desc">Merancang antarmuka sistem pengaduan berbasis CRUD untuk dashboard IT Support.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">EXPO TECH ITPLN 2024/2025</div>
+                        <div class="cert-date">Jan 2025</div>
+                    </div>
+                    <div class="cert-issuer">Institut Teknologi PLN Jakarta</div>
+                    <div class="cert-desc">Memamerkan aplikasi "MediChild" yang dikembangkan sendiri, menampilkan fitur konsultasi dokter, e-farmasi, dan janji temu.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">Mastering Data Cleaning, EDA & Visualization</div>
+                        <div class="cert-date">Jan 2025</div>
+                    </div>
+                    <div class="cert-issuer">Information Retrieval Laboratory IT-PLN</div>
+                    <div class="cert-desc">Melakukan pembersihan data, analisis eksplorasi (EDA), dan visualisasi data menggunakan Python dan PowerBI.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">NLP: Sentiment Analysis</div>
+                        <div class="cert-date">Mei 2023</div>
+                    </div>
+                    <div class="cert-issuer">Intelligent Computing Laboratory IT-PLN</div>
+                    <div class="cert-desc">Melakukan analisis sentimen pada data tekstual menggunakan Python dan teknik NLP dasar.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">Build a UI/UX Mobile with Figma</div>
+                        <div class="cert-date">Jan 2023</div>
+                    </div>
+                    <div class="cert-issuer">Software Architecture And Quality Laboratory IT-PLN</div>
+                    <div class="cert-desc">Mendesain wireframe dan prototipe high-fidelity untuk aplikasi mobile dengan fokus pada pengalaman pengguna.</div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-title">Basic English Education Standardization (BEES)</div>
+                        <div class="cert-date">Feb 2023</div>
+                    </div>
+                    <div class="cert-issuer">Language Development Center IT-PLN Jakarta</div>
+                    <div class="cert-desc">Skor 58 (A2) dalam standarisasi pendidikan bahasa Inggris dasar.</div>
+                </div>
             </div>
         </section>
         
@@ -782,21 +922,21 @@
                         <div class="contact-icon">📍</div>
                         <div>
                             <h3>Lokasi</h3>
-                            <p>Jakarta, Indonesia</p>
+                            <p>Kabupaten Bekasi, Indonesia</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div>
                             <h3>Email</h3>
-                            <p>ajeng@gmail.com</p>
+                            <p>ajengpuspitaloka1@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📱</div>
                         <div>
                             <h3>Telepon</h3>
-                            <p>+62 812 3456 7890</p>
+                            <p>+62 821 1429 3138</p>
                         </div>
                     </div>
                 </div>
@@ -807,12 +947,12 @@
     <footer>
         <div class="footer-content">
             <h3>Ajeng Puspitaloka</h3>
-            <p>Mahasiswa Teknik Informatika | Web Developer | UI/UX Designer</p>
+            <p>Mahasiswa Teknik Informatika | Web & Mobile Developer | UI/UX Designer</p>
             <div class="social-icons">
-                <a href="#"><i>📱</i></a>
-                <a href="#"><i>📧</i></a>
-                <a href="#"><i>💼</i></a>
-                <a href="#"><i>📚</i></a>
+                <a href="https://github.com/ajengpuspitaloka" target="_blank"><i>💻</i></a>
+                <a href="mailto:ajengpuspitaloka1@gmail.com"><i>📧</i></a>
+                <a href="https://linkedin.com" target="_blank"><i>🔗</i></a>
+                <a href="tel:+6282114293138"><i>📱</i></a>
             </div>
             <p class="copyright">© 2025. Semua Hak Cipta Dilindungi.</p>
         </div>
@@ -835,7 +975,7 @@
         // Form submission
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Pesan Anda telah dikirim! (Demo)');
+            alert('Pesan Anda telah dikirim! Terima kasih telah menghubungi saya.');
             this.reset();
         });
     </script>
